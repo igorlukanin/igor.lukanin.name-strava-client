@@ -24,7 +24,11 @@ var configure = function() {
 };
 
 var loadAthleteInfo = function() {
-    return Promise.denodeify(client.athlete.get);
+    return Promise.denodeify(client.athlete.get)({});
+};
+
+var loadAthleteStats = function(athleteInfo) {
+    return Promise.denodeify(client.athlete.listStats)(athleteInfo);
 };
 
 
@@ -32,5 +36,6 @@ configure();
 
 
 module.exports = {
-    loadAthleteInfo: loadAthleteInfo
+    loadAthleteInfo: loadAthleteInfo,
+    loadAthleteStats: loadAthleteStats
 };
