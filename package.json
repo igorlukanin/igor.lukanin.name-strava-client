@@ -1,0 +1,14 @@
+{
+  "name": "igor.lukanin.name-strava-client",
+  "version": "0.0.1",
+  "author": "Igor Lukanin",
+  "scripts": {
+    "start": "NODE_ENV=production node src/app.js"
+  },
+  "dependencies": {
+    "config": "^1.19.0",
+    "nodegit": "^0.11.6",
+    "promise": "^7.1.1",
+    "strava-v3": "igorlukanin/node-strava-v3"
+  }
+}
