@@ -59,6 +59,7 @@ var update = function() {
             console.log('Distance updated.');
         }, function() {
             console.log('Distance not updated.');
+            console.log(arguments);
         });
 };
 
