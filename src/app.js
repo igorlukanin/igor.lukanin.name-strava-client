@@ -32,7 +32,7 @@ var update = function() {
 
     var repo = rmrf(directory)
         .then(function() {
-            return git.clone(url, directory);
+            return git.clone(url, directory, privateKey);
         });
 
     Promise.all([ distance, repo ])
