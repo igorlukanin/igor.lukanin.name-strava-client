@@ -7,17 +7,22 @@ var clone = function(url, directory) {
 };
 
 var add = function(directory, path) {
-    return exec('cd "' + directory + '" && git add "' + path + '"');
+    return exec('cd "' + directory + '" && ' +
+                'git add "' + path + '"');
 };
 
-var commit = function(directory, author, message) {
-    return exec('cd "' + directory + '" && git commit --author "' + author + '" -m "' + message + '"');
+var commit = function(directory, author, email, message) {
+    return exec('cd "' + directory + '" && ' +
+                'git config user.name "' + author + '" && ' +
+                'git config user.email "' + email + '" && ' +
+                'git commit --author "' + author + '" -m "' + message + '"');
 };
 
 var push = function(directory, remote, privateKey) {
     process.env.GIT_SSH_COMMAND = 'ssh -i "' + privateKey + '"';
 
-    return exec('cd "' + directory + '" && git push "' + remote + '"');
+    return exec('cd "' + directory + '" && ' +
+                'git push "' + remote + '"');
 };
 
 
