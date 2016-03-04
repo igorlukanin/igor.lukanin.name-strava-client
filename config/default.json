@@ -3,5 +3,14 @@
     "client_id": 0,
     "client_secret": "",
     "access_token": ""
+  },
+  "repo": {
+    "directory": "./repo/",
+    "file": "_config.yml",
+    "entry": "running_distance",
+    "url": "https://github.com/igorlukanin/igor.lukanin.name.git",
+    "remote": "origin",
+    "message": "Running distance updated",
+    "privateKeyFile": "./keys/igor.lukanin.name-strava-client"
   }
 }

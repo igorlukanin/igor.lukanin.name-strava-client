@@ -7,8 +7,9 @@
   },
   "dependencies": {
     "config": "^1.19.0",
-    "nodegit": "^0.11.6",
     "promise": "^7.1.1",
-    "strava-v3": "igorlukanin/node-strava-v3"
+    "rimraf": "^2.5.2",
+    "strava-v3": "igorlukanin/node-strava-v3",
+    "yaml-js": "^0.1.3"
   }
 }
