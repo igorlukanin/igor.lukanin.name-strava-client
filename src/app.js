@@ -61,4 +61,5 @@ var update = function() {
         });
 };
 
+update();
 setInterval(update, updateInterval);
