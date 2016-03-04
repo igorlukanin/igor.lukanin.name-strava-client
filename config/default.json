@@ -12,5 +12,6 @@
     "remote": "origin",
     "message": "Running distance updated",
     "privateKeyFile": "./keys/igor.lukanin.name-strava-client"
-  }
+  },
+  "update_interval_minutes": 15
 }
