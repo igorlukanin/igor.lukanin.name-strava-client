@@ -12,6 +12,7 @@ var config = require('config'),
     entry = config.get('repo.entry'),
     url = config.get('repo.url'),
     remote = config.get('repo.remote'),
+    branch = config.get('repo.branch'),
     message = config.get('repo.message'),
     author = config.get('repo.author'),
     email = config.get('repo.email'),
@@ -54,7 +55,7 @@ var update = function() {
             return git.commit(directory, author, email, message);
         })
         .then(function() {
-            return git.push(directory, remote, privateKey);
+            return git.push(directory, remote, branch, privateKey);
         })
         .then(function() {
             console.log('Distance updated.');

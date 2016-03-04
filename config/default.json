@@ -10,6 +10,7 @@
     "entry": "running_distance",
     "url": "git@github.com:igorlukanin/igor.lukanin.name.git",
     "remote": "origin",
+    "branch": "gh-pages",
     "author": "Igor Lukanin",
     "email": "mail@igor.lukanin.name",
     "message": "Running distance updated",
