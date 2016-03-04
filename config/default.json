@@ -8,7 +8,7 @@
     "directory": "./repo/",
     "file": "_config.yml",
     "entry": "running_distance",
-    "url": "https://github.com/igorlukanin/igor.lukanin.name.git",
+    "url": "git@github.com:igorlukanin/igor.lukanin.name.git",
     "remote": "origin",
     "author": "Igor Lukanin",
     "email": "mail@igor.lukanin.name",
