@@ -3,11 +3,8 @@ var Promise = require('promise'),
 
 
 var clone = function(url, directory, privateKey) {
-    return exec('git clone "' + url + '" "' + directory + '"', {
-        env: {
-            "GIT_SSH_COMMAND": "ssh -i '" + privateKey + "'"
-        }
-    });
+    return exec('GIT_SSH_COMMAND="ssh -i \'" + privateKey + "\'" && ' +
+                'git clone "' + url + '" "' + directory + '"');
 };
 
 var add = function(directory, path) {
