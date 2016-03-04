@@ -13,6 +13,7 @@ var config = require('config'),
     url = config.get('repo.url'),
     remote = config.get('repo.remote'),
     message = config.get('repo.message'),
+    author = config.get('repo.author'),
     privateKey = config.get('repo.privateKeyFile'),
 
     updateInterval = config.get('update_interval_minutes') * 60 * 1000 /* milliseconds */;
@@ -49,7 +50,7 @@ var update = function() {
             return git.add(directory, file);
         })
         .then(function() {
-            return git.commit(directory, message);
+            return git.commit(directory, author, message);
         })
         .then(function() {
             return git.push(directory, remote, privateKey);

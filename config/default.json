@@ -10,6 +10,7 @@
     "entry": "running_distance",
     "url": "https://github.com/igorlukanin/igor.lukanin.name.git",
     "remote": "origin",
+    "author": "Igor Lukanin <mail@igor.lukanin.name>",
     "message": "Running distance updated",
     "privateKeyFile": "./keys/igor.lukanin.name-strava-client"
   },

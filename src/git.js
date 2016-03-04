@@ -10,8 +10,8 @@ var add = function(directory, path) {
     return exec('cd "' + directory + '" && git add "' + path + '"');
 };
 
-var commit = function(directory, message) {
-    return exec('cd "' + directory + '" && git commit -m "' + message + '"');
+var commit = function(directory, author, message) {
+    return exec('cd "' + directory + '" && git commit --author "' + author + '" -m "' + message + '"');
 };
 
 var push = function(directory, remote, privateKey) {
