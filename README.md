@@ -1,4 +1,4 @@
-This script periodically updates my personal website with data from my Strava profile.
+This script periodically updates my [personal website](http://igor.lukanin.name) with data from my [Strava profile](https://www.strava.com/athletes/4443104).
 
 ### How it works
 
