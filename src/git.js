@@ -20,12 +20,9 @@ var commit = function(directory, author, email, message) {
 };
 
 var push = function(directory, remote, branch, privateKey) {
-    return exec('cd "' + directory + '" && ' +
-                'git push "' + remote + '" "' + branch + '"', {
-        env: {
-            "GIT_SSH_COMMAND": "ssh -i '" + privateKey + "'"
-        }
-    });
+    return exec('GIT_SSH_COMMAND="ssh -i \'' + privateKey + '\'" && ' +
+                'cd "' + directory + '" && ' +
+                'git push "' + remote + '" "' + branch + '"');
 };
 
 
