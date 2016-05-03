@@ -8,13 +8,12 @@
     "directory": "./repo/",
     "file": "_config.yml",
     "entry": "running_distance",
-    "url": "git@github.com:igorlukanin/igor.lukanin.name.git",
+    "url": "git@github.com-ilnsc:igorlukanin/igor.lukanin.name.git",
     "remote": "origin",
     "branch": "gh-pages",
     "author": "Igor Lukanin",
     "email": "mail@igor.lukanin.name",
-    "message": "Running distance updated",
-    "privateKeyFile": "./keys/igor.lukanin.name-strava-client"
+    "message": "Running distance updated"
   },
   "update_interval_minutes": 15
 }

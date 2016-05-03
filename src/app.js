@@ -16,28 +16,21 @@ var config = require('config'),
     message = config.get('repo.message'),
     author = config.get('repo.author'),
     email = config.get('repo.email'),
-    privateKey = config.get('repo.privateKeyFile'),
 
     updateInterval = config.get('update_interval_minutes') * 60 * 1000 /* milliseconds */;
 
 
-var update = function() {
+var update = () => {
     var distance = strava
         .loadAthleteInfo()
-        .then(function(info) {
-            return strava.loadAthleteStats(info);
-        })
-        .then(function(stats) {
-            return Math.round(stats.ytd_run_totals.distance / 1000);
-        });
+        .then(info => strava.loadAthleteStats(info))
+        .then(stats => Math.round(stats.ytd_run_totals.distance / 1000));
 
     var repo = rmrf(directory)
-        .then(function() {
-            return git.clone(url, directory, privateKey);
-        });
+        .then(() => git.clone(url, directory));
 
     Promise.all([ distance, repo ])
-        .then(function(results) {
+        .then(results => {
             var distance = results[0];
 
             if (distance == yaml.readKey(path, entry)) {
@@ -48,20 +41,15 @@ var update = function() {
                 return Promise.resolve(distance);
             }
         })
-        .then(function() {
-            return git.add(directory, file);
+        .then(() => git.add(directory, file))
+        .then(() => git.commit(directory, author, email, message))
+        .then(() => git.push(directory, remote, branch))
+        .then(() => {
+            console.log('Distance updated.')
         })
-        .then(function() {
-            return git.commit(directory, author, email, message);
-        })
-        .then(function() {
-            return git.push(directory, remote, branch, privateKey);
-        })
-        .then(function() {
-            console.log('Distance updated.');
-        }, function() {
+        .catch(err => {
             console.log('Distance not updated.');
-            console.log(arguments);
+            console.log(err);
         });
 };
 

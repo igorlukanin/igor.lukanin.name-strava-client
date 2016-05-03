@@ -2,9 +2,8 @@ var Promise = require('promise'),
     exec = Promise.denodeify(require('child_process').exec);
 
 
-var clone = function(url, directory, privateKey) {
-    return exec('GIT_SSH_COMMAND="ssh -i \'' + privateKey + '\'" && ' +
-                'git clone "' + url + '" "' + directory + '"');
+var clone = function(url, directory) {
+    return exec('git clone "' + url + '" "' + directory + '"');
 };
 
 var add = function(directory, path) {
@@ -19,9 +18,8 @@ var commit = function(directory, author, email, message) {
                 'git commit --author "' + author + '" -m "' + message + '"');
 };
 
-var push = function(directory, remote, branch, privateKey) {
-    return exec('GIT_SSH_COMMAND="ssh -i \'' + privateKey + '\'" && ' +
-                'cd "' + directory + '" && ' +
+var push = function(directory, remote, branch) {
+    return exec('cd "' + directory + '" && ' +
                 'git push "' + remote + '" "' + branch + '"');
 };
 
